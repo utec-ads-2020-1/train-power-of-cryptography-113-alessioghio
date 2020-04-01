@@ -2,26 +2,23 @@
 #include <cmath>
 #include <string>
 #include <sstream>
-#include <fstream>
-
 using namespace std;
 
 int main(){
     string inputLine;
     stringstream ss;
-    fstream file("input.txt");
-    int n,k;
-    float p;
-    while (!(file.eof())){
-        getline(file, inputLine);
+    int n, k;
+    double p;
+    while (!(cin.eof())){
+        getline(cin, inputLine);
         ss << inputLine;
         ss >> n;
         ss.clear();
-        getline(file, inputLine);
+        getline(cin, inputLine);
         ss << inputLine;
         ss >> p;
         ss.clear();
-        k = pow(p, 1.0/n);
+        k = round(pow(p, (float)1.0/(float)n));
         cout << k << endl;
     }
     return EXIT_SUCCESS;
